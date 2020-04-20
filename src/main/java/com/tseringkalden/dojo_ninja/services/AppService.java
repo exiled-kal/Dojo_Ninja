@@ -54,5 +54,13 @@ public class AppService {
 	public Optional<Ninja> getNinja(Long id){
 		return ninjarepo.findById(id);
 	}
-	
+
+	public Dojo findDojo(Long id) {
+	    Optional<Dojo> optionalDojo = dojorepo.findById(id);
+	    if(optionalDojo.isPresent()) {
+	        return optionalDojo.get();
+	    } else {
+	        return null;
+	    }
+	}
 }
